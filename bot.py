@@ -11,7 +11,10 @@ SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
 # === Supabase client ===
+from supabase import create_client
+
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+
 
 # === Telegram bot setup ===
 app = Flask(__name__)
@@ -50,3 +53,4 @@ def webhook():
 @app.route("/")
 def index():
     return "Bot is alive!"
+
